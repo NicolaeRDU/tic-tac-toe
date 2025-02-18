@@ -8,18 +8,20 @@ function SignUp({ setIsAuth }) {
   const [user, setUser] = useState(null);
 
   function signUp() {
-    Axios.post("http://localhost:3002/signup", user).then((res) => {
-      const { token, userId, firstName, lastName, username, hashedPassword } =
-        res.data;
+    Axios.post("https://tic-tac-toe-phi-orpin.vercel.app/signup", user).then(
+      (res) => {
+        const { token, userId, firstName, lastName, username, hashedPassword } =
+          res.data;
 
-      cookies.set("token", token);
-      cookies.set("userId", userId);
-      cookies.set("firstName", firstName);
-      cookies.set("lastName", lastName);
-      cookies.set("username", username);
-      cookies.set("hashedPassword", hashedPassword);
-      setIsAuth(true);
-    });
+        cookies.set("token", token);
+        cookies.set("userId", userId);
+        cookies.set("firstName", firstName);
+        cookies.set("lastName", lastName);
+        cookies.set("username", username);
+        cookies.set("hashedPassword", hashedPassword);
+        setIsAuth(true);
+      }
+    );
   }
 
   return (

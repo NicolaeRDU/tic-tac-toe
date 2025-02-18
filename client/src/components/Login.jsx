@@ -9,7 +9,7 @@ function Login({ setIsAuth }) {
   const cookies = new Cookies();
 
   function login() {
-    Axios.post("http://localhost:3002/login", {
+    Axios.post("https://tic-tac-toe-phi-orpin.vercel.app/login", {
       username,
       password,
     }).then((res) => {
