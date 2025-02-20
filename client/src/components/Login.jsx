@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Axios from "axios";
 import Cookies from "universal-cookie";
 
@@ -9,7 +9,7 @@ function Login({ setIsAuth }) {
   const cookies = new Cookies();
 
   function login() {
-    Axios.post("https://tic-tac-toe-phi-orpin.vercel.app/login", {
+    Axios.post("http://localhost:3001/login", {
       username,
       password,
     }).then((res) => {
